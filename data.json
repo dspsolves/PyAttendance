@@ -1,0 +1,37 @@
+{
+    "PROJECT":
+    {
+        "delv": 26,
+        "attd": 22
+    },
+    "DAA":
+    {
+        "delv": 39,
+        "attd": 31
+    },
+    "CN":
+    {
+        "delv": 37,
+        "attd": 32
+    },
+    "DIP":
+    {
+        "delv": 37,
+        "attd": 30
+    },
+    "AS":
+    {
+        "delv": 39,
+        "attd": 37
+    },
+    "AIML":
+    {
+        "delv": 39,
+        "attd": 33
+    },
+    "ERP":
+    {
+        "delv": 35,
+        "attd": 32
+    },
+}
