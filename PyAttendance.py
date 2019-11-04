@@ -29,20 +29,24 @@ def absents(a, d, p, t):
 if __name__ == '__main__' :
     main()
 
-a = int(input("Attended : "))
-d = int(input("Delivered : "))
-p = round((a / d) * 100, 2)
+print("\nATTENDANCE CALCULATOR\n")
 
-print("\nCurrent Percentage : " + str(p) + " %\n")
+for sub in att :
+    a = att[sub]['attd']
+    d = att[sub]['delv']
+    p = round((a / d) * 100, 2)
 
-if p >= 90 :
-    print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
-    print("Can Leave " + str(absents(a,d,p,90)) + " Lectures And Still Remain Above 90%")
+    print(f"- {sub} : " + str(p) + " %\n")
 
-elif p >= 75 :
-    print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
-    print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+    if p >= 90 :
+        print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
+        print("Can Leave " + str(absents(a,d,p,90)) + " Lectures And Still Remain Above 90%")
 
-else :
-    print("Attend " + str(presents(a,d,p,75)) + " Lectures To Attain 75%")
-    print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+    elif p >= 75 :
+        print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
+        print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+
+    else :
+        print("Attend " + str(presents(a,d,p,75)) + " Lectures To Attain 75%")
+        print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+    print()
