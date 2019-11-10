@@ -1,37 +1,37 @@
 {
     "PROJECT":
     {
-        "delv": 26,
-        "attd": 22
+        "delv": 28,
+        "attd": 24
     },
     "DAA":
     {
-        "delv": 39,
-        "attd": 31
+        "delv": 42,
+        "attd": 34
     },
     "CN":
-    {
-        "delv": 37,
-        "attd": 32
-    },
-    "DIP":
-    {
-        "delv": 37,
-        "attd": 30
-    },
-    "AS":
-    {
-        "delv": 39,
-        "attd": 37
-    },
-    "AIML":
     {
         "delv": 40,
         "attd": 34
     },
+    "DIP":
+    {
+        "delv": 40,
+        "attd": 32
+    },
+    "AS":
+    {
+        "delv": 41,
+        "attd": 38
+    },
+    "AIML":
+    {
+        "delv": 41,
+        "attd": 35
+    },
     "ERP":
     {
-        "delv": 36,
-        "attd": 32
+        "delv": 38,
+        "attd": 34
     }
 }
