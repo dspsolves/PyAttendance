@@ -1,9 +1,14 @@
+import sys
 import json
+import pyperclip
 
 def main():
     global att
-    with open("data.json", "r") as read_file:
-        att = json.load(read_file)
+    try :
+        att = json.loads(pyperclip.paste())
+    except :
+        print("Clipboard Contains Irrelevant Data")
+        sys.exit()
 
 def presents(a, d, p, t):
     s = 0
@@ -31,22 +36,22 @@ if __name__ == '__main__' :
 
 print("\nATTENDANCE CALCULATOR\n")
 
-for sub in att :
-    a = att[sub]['attd']
-    d = att[sub]['delv']
-    p = round((a / d) * 100, 2)
-
-    print(f"- {sub} : " + str(p) + " %\n")
+for sub in att['attendance'] :
+    a = int(sub['Eligible Attended'])
+    d = int(sub['Eligible Delivered'])
+    p = float(sub['Eligible Percentage'])
+    print(f"{sub['Title']} : {str(p)}%\n")
 
     if p >= 90 :
-        print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
-        print("Can Leave " + str(absents(a,d,p,90)) + " Lectures And Still Remain Above 90%")
+        print("- Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
+        print("- Can Leave " + str(absents(a,d,p,90)) + " Lectures And Still Remain Above 90%")
 
     elif p >= 75 :
-        print("Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
-        print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+        print("- Can Leave " + str(absents(a,d,p,75)) + " Lectures And Still Remain Above 75%")
+        print("- Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
 
     else :
-        print("Attend " + str(presents(a,d,p,75)) + " Lectures To Attain 75%")
-        print("Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
+        print("- Attend " + str(presents(a,d,p,75)) + " Lectures To Attain 75%")
+        print("- Attend " + str(presents(a,d,p,90)) + " Lectures To Attain 90%")
     print()
+
